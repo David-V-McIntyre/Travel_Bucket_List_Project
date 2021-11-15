@@ -14,3 +14,6 @@ class TestCountry(unittest.TestCase):
 
     def test_country_has_city(self):
         self.assertEqual("Beijing", self.country.city)
+    
+    def test_country_has_visited(self):
+        self.assertEqual(False, self.country.visited)
