@@ -11,3 +11,6 @@ class TestCountry(unittest.TestCase):
 
     def test_country_has_continent(self):
         self.assertEqual("Asia", self.country.continent)
+
+    def test_country_has_city(self):
+        self.assertEqual("Beijing", self.country.city)
