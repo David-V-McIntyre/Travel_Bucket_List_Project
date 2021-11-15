@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/cities" method="post">
+  <div>
+    <label for="city_name">City:</label>
+    <input type="text" id="city_name" name="city_name" placeholder="City Name" required autofocus>
+  </div>
+
+  <div>
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country" placeholder="Country" required>
+  </div>
+
+  <div>
+    <label for="vidited">Visited:</label>
+    <select id="visited" name="visited">
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+  </div>
+
+  <button type="submit">Add Destination</button>
+
+</form>
+
+{% endblock %}

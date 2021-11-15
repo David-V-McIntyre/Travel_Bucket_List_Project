@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for city in all_cities_not_visited %}
+<div class="city_not_visited">
+  <div class="content">
+    <p>{{city.name}}</p>
+    <p>{{city.country.country_name}}</p>
+    <p>Visited?{{city.visited}}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
