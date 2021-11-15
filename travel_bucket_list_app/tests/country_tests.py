@@ -17,3 +17,7 @@ class TestCountry(unittest.TestCase):
     
     def test_country_has_visited(self):
         self.assertEqual(False, self.country.visited)
+
+    def test_mark_visited(self):
+        self.country.mark_visited_country()
+        self.assertEqual(True, self.country.visited)

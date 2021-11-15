@@ -6,5 +6,5 @@ class Country:
         self.visited = visited
         self.id = id 
 
-    def mark_visited(self):
+    def mark_visited_country(self):
         self.visited = True
