@@ -1,6 +1,8 @@
-from flask import Flask
+from flask import Flask, render_template
+from controllers.cities_controller import cities_controller
+
 app = Flask(__name__)
-app.register_blueprint(tasks_blueprint)
+app.register_blueprint(cities_blueprint)
 
 
 @app.route('/')
