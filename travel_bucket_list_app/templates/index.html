@@ -1,4 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-This is my splashpage
+
+{% for city in all_cities_visited %}
+<div class="city_visited">
+  <div class="content">
+    <p>{{city.name}}</p>
+    <p>{{city.country.country_name}}</p>
+    <p>Visited?{{city.visited}}</p>
+    </div>
+</div>
+{% endfor %}
+
+<hr>
+
+{% for city in all_cities_not_visited %}
+<div class="city_not_visited">
+  <div class="content">
+    <p>{{city.name}}</p>
+    <p>{{city.country.country_name}}</p>
+    <p>Visited?{{city.visited}}</p>
+    </div>
+</div>
+{% endfor %}
+
+
 {% endblock %}

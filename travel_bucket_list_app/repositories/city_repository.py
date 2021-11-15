@@ -26,6 +26,33 @@ def select_all():
         cities.append(city)
     return cities
 
+def select_all_visited():
+    visited_cities = []
+
+    sql = "SELECT * FROM cities WHERE visited = %s"
+    values = [True]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['city_name'], country, row['visited'], row['id'] )
+        visited_cities.append(city)
+    return visited_cities
+
+def select_all_not_visited():
+    not_visited_cities = []
+
+    sql = "SELECT * FROM cities WHERE visited = %s"
+    values = [False]
+    results = run_sql(sql, values)
+
+    for row in results:
+        country = country_repository.select(row['country_id'])
+        city = City(row['city_name'], country, row['visited'], row['id'] )
+        not_visited_cities.append(city)
+    return not_visited_cities
+
+
 
 
 def select(id):
@@ -56,3 +83,8 @@ def update(city):
     values = [city.name, city.country.id, city.id]
     print(values)
     run_sql(sql, values)
+
+
+
+
+
