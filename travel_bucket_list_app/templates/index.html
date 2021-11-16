@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="visited_container">
-
+<div class="city_container">
     {% for city in all_cities_visited %}
         <div class="city_visited">
             <div class="content">
@@ -33,7 +32,7 @@
 
 <hr>
 
-<div class="not_visited_container">
+<div class="city_container">
 {% for city in all_cities_not_visited %}
 <div class="city_not_visited">
     <div class="content">
