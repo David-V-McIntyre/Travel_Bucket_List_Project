@@ -29,11 +29,9 @@ def new_city():
 
 @cities_blueprint.route("/cities",  methods=['POST'])
 def create_city():
-    city_name = request.form['city_name']
-    country_name = request.form['country_name']
-    visited    = request.form['visited']
-    country        = Country(country_name)
-    city        = City(city_name, country, visited)
+    city_name       = request.form['city_name']
+    visited         = request.form['visited']
+    country         = country_repository.select(request.form['country_id'])
+    city            = City(city_name, country, visited)
     city_repository.save(city)
-    country_repository.save(country)
     return redirect('/')
