@@ -8,12 +8,17 @@
   </div>
 
   <div>
-    <label for="country_name">Country:</label>
+    <label for="country_name">Select Country:</label>
     <select id="country_name" name="country_name">
       {% for country in all_countries %}
         <option value="{{ country.id }}">{{ country.country_name }}</option>
       {% endfor %}
     </select>
+  </div>
+<p>or</p>
+
+  <div>
+    <a href="/countries/new">add new country!</a>
   </div>
 
   <div>
