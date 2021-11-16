@@ -31,7 +31,38 @@ def new_city():
 def create_city():
     city_name       = request.form['city_name']
     visited         = request.form['visited']
-    country         = country_repository.select(request.form['country_id'])
+    country         = Country(request.form['country_name'])
+    country_repository.save(country)
     city            = City(city_name, country, visited)
     city_repository.save(city)
     return redirect('/')
+
+
+
+
+@cities_blueprint.route("/cities/<id>", methods=['GET'])
+def show_city(id):
+    city = city_repository.select(id)
+    return render_template('cities/show.html', city = city)
+
+
+@cities_blueprint.route("/cities/<id>/edit", methods=['GET'])
+def edit_city(id):
+    countries = country_repository.select_all()
+    city = city_repository.select(id)
+    return render_template('cities/edit.html', city = city, all_countries = countries)
+
+@cities_blueprint.route("/cities/<id>", methods=['POST'])
+def update_city(id):
+    city_name       = request.form['city_name']
+    country_id      = request.form['country_name']    
+    visited         = request.form['visited']
+    country         = country_repository.select(country_id)
+    city            = City(city_name, country, visited, id)
+    city_repository.update(city)
+    return redirect('/')
+
+@cities_blueprint.route("/cities/<id>/delete", methods=['POST'])
+def delete_city():
+    delete_city = city_repository.select(id)[0]['id']
+    city_repository.delete(delete_city)

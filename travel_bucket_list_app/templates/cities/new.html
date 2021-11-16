@@ -9,11 +9,15 @@
 
   <div>
     <label for="country_name">Country:</label>
-    <input type="text" id="country_name" name="country_name" placeholder="Country" required>
+    <select id="country_name" name="country_name">
+      {% for country in all_countries %}
+        <option value="{{ country.id }}">{{ country.country_name }}</option>
+      {% endfor %}
+    </select>
   </div>
 
   <div>
-    <label for="vidited">Visited:</label>
+    <label for="visited">Visited:</label>
     <select id="visited" name="visited">
       <option value="true">Yes</option>
       <option value="false">No</option>

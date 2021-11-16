@@ -6,7 +6,7 @@
     {% for city in all_cities_visited %}
         <div class="city_visited">
             <div class="content">
-                <p>{{city.name}}</p>
+                <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
                 <p>{{city.country.country_name}}</p>
                 <p>Visited? {{city.visited}}</p>
                 <p><a href="/cities/{{city.id}}/edit">Edit</a> or <a href="/cities/{{city.id}}/delete">Delete</a></p>
@@ -24,10 +24,10 @@
 {% for city in all_cities_not_visited %}
 <div class="city_not_visited">
   <div class="content">
-    <p>{{city.name}}</p>
+    <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
     <p>{{city.country.country_name}}</p>
     <p>Visited? {{city.visited}}</p>
-    <p><a href="/cities/{{city.id}}/edit">Edit</a> or <a href="/cities/{{city.id}}/delete">Delete</a></p>
+    <p><a href="/cities/{{city.id}}/edit">Edit</a> or <a href="/cities/{{city.id}}/delete" method='post'>Delete</a></p>
     </div>
 </div>
 {% endfor %}
