@@ -27,4 +27,6 @@ city4 = City("Frankfurt", country3)
 city_repository.save(city4)
 city5 = City("Ljubljana", country4, True)
 city_repository.save(city5)
+city6 = City("Dresden", country3, True)
+city_repository.save(city6)
 
