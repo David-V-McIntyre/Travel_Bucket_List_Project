@@ -2,6 +2,38 @@
 {% block content %}
 
 <div class="city_container">
+
+    {% for city in all_cities_not_visited %}
+    <div class="city">
+        <div class="content">
+            <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
+            <p>{{city.country.country_name}}</p>
+            <p>Visited?
+            {% if city.visited == True %}
+              <i class="fa fa-check fa-1x" style="color:green" aria-hidden="true"></i>
+            {% else %}
+              <i class="fa fa-times fa-1x" aria-hidden="true"></i>
+            {% endif %}</p>
+    
+    
+    
+            <p><a href="/cities/{{city.id}}/edit">Edit</a>
+                <div class="buttons">
+                    <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
+                        <button class="trash-button">
+                            <i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i>
+                        </button>
+                    </form>    
+                </div>
+            </p>   
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<hr>
+
+<div class="city_container">
     {% for city in all_cities_visited %}
         <div class="city">
             <div class="content">
@@ -25,41 +57,6 @@
             </div>
          </div>
     {% endfor %}
-         <div class="add_new_link">
-            <a href="/cities/new">Add new</a>
-        </div>
-</div>
-
-<hr>
-
-<div class="city_container">
-{% for city in all_cities_not_visited %}
-<div class="city">
-    <div class="content">
-        <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
-        <p>{{city.country.country_name}}</p>
-        <p>Visited?
-        {% if city.visited == True %}
-          <i class="fa fa-check fa-1x" style="color:green" aria-hidden="true"></i>
-        {% else %}
-          <i class="fa fa-times fa-1x" aria-hidden="true"></i>
-        {% endif %}</p>
-
-
-
-        <p><a href="/cities/{{city.id}}/edit">Edit</a>
-            <div class="buttons">
-                <form class="delete-form" action="/cities/{{city.id}}/delete" method="POST">
-                    <button class="trash-button">
-                        <i class="fa fa-trash-o fa-2x" style="color:red" aria-hidden="true"></i>
-                    </button>
-                </form>    
-            </div>
-        </p>   
-    </div>
-</div>
-
-{% endfor %}
 </div>
 
 {% endblock %}

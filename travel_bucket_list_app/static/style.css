@@ -130,7 +130,7 @@ h1 {
 }
 
 footer {
-  font-family: "Monaco";
+  font-family: "Monaco", ;
   padding-left: 10px;
   background-image: linear-gradient(to right, grey, white);
   color: whitesmoke;
