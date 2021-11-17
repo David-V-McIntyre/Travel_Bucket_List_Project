@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="new_countries_container">
 <form action="/countries" method="post">
   <div>
     <label for="country_name">Country:</label>
     <input type="text" id="country_name" name="country_name" placeholder="Country Name" required autofocus>
   </div>
 
-  <hr>
+  <br>
 
   <button type="submit">Add Country</button>
 
+  <br>
+  <br>
+<div class="new_countries_links">
+  <a href="/cities/new">Add New Destination</a>or <a href="/">Return to Home Page</a>
+</div>
 </form>
-
+</div>
 {% endblock %}

@@ -18,6 +18,7 @@ def create_country():
     country_name = request.form["country_name"]
     country = Country(country_name)
     country_repository.save(country)
-    return redirect("/cities/new")
+    return render_template('/countries/new.html')
+
 
 

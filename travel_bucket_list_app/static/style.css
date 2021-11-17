@@ -136,3 +136,23 @@ footer {
   color: whitesmoke;
   border-radius: 5px;
 }
+
+.new_countries_links a {
+  padding-right: 10px;
+  color:black;
+  font-family: "Helvetica", arial, sans-serif; font-size: 14px;
+}
+
+.new_countries_container {
+  border: 1px solid #ccc;
+  width: 300px;
+  min-height: 68px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  line-height: 18px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: rgb(236, 236, 236);
+}
