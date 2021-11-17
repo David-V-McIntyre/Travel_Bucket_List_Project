@@ -3,7 +3,8 @@
 
 <div class="city_container">
 
-{% for city in all_cities_visited %}<div class="city">
+{% for city in all_cities_visited %}
+<div class="city">
     <div class="content">
         <p><a href="/cities/{{city.id}}">{{city.name}}</a></p>
         <p>{{city.country.country_name}}</p>
@@ -24,6 +25,8 @@
         </p>
     </div>
  </div>
+
 {% endfor %}
+
 </div>
 {% endblock %}

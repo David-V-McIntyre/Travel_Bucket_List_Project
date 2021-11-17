@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="new">
+    <form action="/countries/{{country.id}}/edit" method="post">
+        <div>
+            <label for="country_name">{{country.country_name}} will now be called:</label>
+            <input type="text" id="country_name" name="country_name" placeholder="Country Name" required autofocus>
+        </div>
+    <br>
+        <button type="submit">Update Country</button>
+
+    </form>
+</div>
+
+{% endblock %}
